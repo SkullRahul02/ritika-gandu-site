@@ -10,6 +10,7 @@
             background-color: #1d3d35;
             color: white;
             font-family: Arial, sans-serif;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
         }
         .hero-text {
             padding: 50px;
@@ -46,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery-section">Gallery</a></li> <!-- Smooth scroll link -->
                 <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Facebook</a></li>
@@ -89,7 +90,7 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="container gallery mt-5">
+    <div id="gallery-section" class="container gallery mt-5">
         <h2 class="text-center mb-4">Gallery</h2>
         <div class="row">
             <div class="col-md-4">
