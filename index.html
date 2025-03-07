@@ -3,27 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ritika Gandu</title>
+    <title>Modern Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            background-color: #1d3d35;
+            color: white;
             font-family: Arial, sans-serif;
         }
-        h1 {
-            font-size: 100px;
-            color: #333;
-            text-transform: uppercase;
+        .hero-text {
+            padding: 50px;
+        }
+        .carousel img {
+            height: 400px;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <h1 style="color: red;">RITIKA GANDU</h1>
-    <img src="https://github.com/SkullRahul02/ritika-gandu-site/blob/main/OIP.jpg?raw=true" 
-     alt="Smiling Donkey" width="500">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-3">
+        <a class="navbar-brand" href="#">graphitona</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Facebook</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 hero-text">
+                <h1>Modern Design</h1>
+                <p>Check the simple and brand-new design of the photos to choose the favorite one.</p>
+                <a href="#" class="btn btn-light">Learn more →</a>
+            </div>
+            <div class="col-md-6">
+                <!-- Carousel -->
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
