@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Design</title>
+    <title>Graphitona</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Smooth scrolling */
@@ -15,7 +15,7 @@
         body {
             background: radial-gradient(circle at bottom, #001f3f, #000);
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             overflow-x: hidden;
             position: relative;
@@ -49,49 +49,42 @@
             100% { opacity: 0; transform: scale(1); }
         }
 
-        /* Fixed Navbar */
+        /* Navbar */
         .navbar {
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
-            transition: background 0.3s;
         }
 
-        .hero-text {
-            padding: 150px 50px 50px;
+        .hero {
+            padding: 150px 20px;
             text-align: center;
         }
 
         .carousel img {
             height: 400px;
             object-fit: cover;
+            border-radius: 10px;
         }
 
         .gallery {
             padding: 80px 0;
+            text-align: center;
         }
 
         .gallery img {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .quote {
-            margin-top: 15px;
-            font-size: 18px;
-            font-style: italic;
-            text-align: center;
-        }
-
-        .section {
-            min-height: 100vh;
-            padding: 80px 20px;
-            text-align: center;
+        .gallery img:hover {
+            transform: scale(1.05);
         }
 
         .profile {
@@ -100,6 +93,7 @@
             align-items: center;
             flex-direction: column;
             padding: 50px;
+            text-align: center;
         }
 
         .profile img {
@@ -110,14 +104,16 @@
             margin-bottom: 20px;
         }
 
-        .profile h3 {
-            margin-bottom: 10px;
+        /* Game Section */
+        .game-container {
+            text-align: center;
+            margin: 50px auto;
         }
 
-        .profile p {
-            font-size: 16px;
-            text-align: center;
-            max-width: 500px;
+        #gameCanvas {
+            background: black;
+            border: 2px solid white;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -128,7 +124,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark px-3">
-        <a class="navbar-brand" href="#">graphitona</a>
+        <a class="navbar-brand" href="#">Graphitona</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -136,42 +132,17 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#game">Game</a></li>
                 <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/_.ri7uj._/" target="_blank">Instagram</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div id="home" class="section">
-        <div class="hero-text">
-            <h1>Modern Design</h1>
-            <p>Check the simple and brand-new design of the photos to choose your favorite one.</p>
-            <a href="#gallery" class="btn btn-light">Explore Gallery →</a>
-        </div>
-        <div class="container">
-            <!-- Carousel -->
-            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 3">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
+    <div id="home" class="hero">
+        <h1>Welcome to Graphitona</h1>
+        <p>Discover the beauty of the universe through art and games!</p>
+        <a href="#gallery" class="btn btn-light">Explore Gallery →</a>
     </div>
 
     <!-- Gallery Section -->
@@ -180,28 +151,29 @@
         <div class="container gallery">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="https://github.com/SkullRahul02/ritikalife.github.io/blob/main/97af96f1-f3f3-4a2b-8946-c87def0f0d27.jpg?raw=true" alt="Image 1">
-                    <p class="quote">"Beauty is in the eye of the beholder."</p>
+                    <img src="https://via.placeholder.com/400x300" alt="Image 1">
                 </div>
                 <div class="col-md-4">
                     <img src="https://via.placeholder.com/400x300" alt="Image 2">
-                    <p class="quote">"Every picture tells a story."</p>
                 </div>
                 <div class="col-md-4">
                     <img src="https://via.placeholder.com/400x300" alt="Image 3">
-                    <p class="quote">"Art speaks where words are unable to explain."</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Game Section -->
+    <div id="game" class="game-container">
+        <h2>Space Dodge Game</h2>
+        <canvas id="gameCanvas" width="400" height="500"></canvas>
+    </div>
+
     <!-- Profile Section -->
-    <div id="profile" class="section">
-        <div class="profile">
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
-            <h3>Ritu Raj</h3>
-            <p>Photography enthusiast and content creator. Exploring the world through my lens.</p>
-        </div>
+    <div id="profile" class="profile">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture">
+        <h3>Ritu Raj</h3>
+        <p>Photography enthusiast and content creator. Exploring the world through my lens.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -231,5 +203,47 @@
 
         createStars();
     </script>
+
+    <!-- Space Game JavaScript -->
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let ship = { x: 180, y: 450, width: 40, height: 40 };
+        let obstacles = [];
+        let gameOver = false;
+
+        function drawShip() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(ship.x, ship.y, ship.width, ship.height);
+        }
+
+        function drawObstacles() {
+            ctx.fillStyle = "red";
+            obstacles.forEach(obs => {
+                ctx.fillRect(obs.x, obs.y, 30, 30);
+                obs.y += 3;
+            });
+            obstacles = obstacles.filter(obs => obs.y < canvas.height);
+        }
+
+        function updateGame() {
+            if (!gameOver) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawShip();
+                drawObstacles();
+                requestAnimationFrame(updateGame);
+            }
+        }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft" && ship.x > 0) ship.x -= 20;
+            if (e.key === "ArrowRight" && ship.x < 360) ship.x += 20;
+        });
+
+        setInterval(() => obstacles.push({ x: Math.random() * 370, y: 0 }), 2000);
+        updateGame();
+    </script>
+
 </body>
 </html>
