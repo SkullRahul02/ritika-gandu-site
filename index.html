@@ -93,6 +93,34 @@
             padding: 80px 20px;
             text-align: center;
         }
+
+        /* Flappy Bird Game Styles */
+        #flappyCanvas {
+            display: block;
+            margin: 20px auto;
+            background: black;
+            border: 2px solid white;
+        }
+
+        .restart-btn {
+            display: none;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .score {
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -102,7 +130,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark px-3">
-        <a class="navbar-brand" href="#">RItika's Life</a>
+        <a class="navbar-brand" href="#">Ritika's Life</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -173,44 +201,46 @@
     <div id="blog" class="section">
         <h2>Blog</h2>
         <p>Stay tuned for our latest updates and news.</p>
-        #flappyCanvas {
-            display: block;
-            margin: 20px auto;
-            background: black;
-            border: 2px solid white;
-        }
-        .restart-btn {
-            display: none;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 18px;
-            background: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .score {
-            font-size: 20px;
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <div class="stars"></div>
-    <nav class="navbar navbar-expand-lg navbar-dark px-3">
-        <a class="navbar-brand" href="#">Ritika's Life</a>
-    </nav>
-    <div id="blog" class="blog">
-        <h2>Blog</h2>
-        <p>Stay tuned for our latest updates and news.</p>
         <div class="score">Score: <span id="score">0</span></div>
         <canvas id="flappyCanvas" width="400" height="500"></canvas>
         <button class="restart-btn" onclick="resetGame()">Restart</button>
     </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out for any inquiries.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for blinking stars -->
+    <script>
+        function createStars() {
+            const starContainer = document.querySelector(".stars");
+
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement("div");
+                star.classList.add("star");
+
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight;
+                let duration = Math.random() * 2 + 1;
+                let delay = Math.random() * 2;
+
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+                star.style.animationDuration = `${duration}s`;
+                star.style.animationDelay = `${delay}s`;
+
+                starContainer.appendChild(star);
+            }
+        }
+
+        createStars();
+    </script>
+
+    <!-- JavaScript for Flappy Bird Game -->
     <script>
         const canvas = document.getElementById("flappyCanvas");
         const ctx = canvas.getContext("2d");
@@ -308,40 +338,6 @@
         }
 
         resetGame();
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>Feel free to reach out for any inquiries.</p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JavaScript for blinking stars -->
-    <script>
-        function createStars() {
-            const starContainer = document.querySelector(".stars");
-
-            for (let i = 0; i < 100; i++) {
-                let star = document.createElement("div");
-                star.classList.add("star");
-
-                let x = Math.random() * window.innerWidth;
-                let y = Math.random() * window.innerHeight;
-                let duration = Math.random() * 2 + 1;
-                let delay = Math.random() * 2;
-
-                star.style.left = `${x}px`;
-                star.style.top = `${y}px`;
-                star.style.animationDuration = `${duration}s`;
-                star.style.animationDelay = `${delay}s`;
-
-                starContainer.appendChild(star);
-            }
-        }
-
-        createStars();
     </script>
 </body>
 </html>
